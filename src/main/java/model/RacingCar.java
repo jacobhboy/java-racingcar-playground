@@ -1,23 +1,28 @@
 package model;
 
 public class RacingCar {
+    public static final int THRESHOLD_FOR_MOVE = 4;
     private final String carName;
     private int numOfMove;
 
-    public RacingCar(String carName) {
+    public RacingCar(final String carName) {
         this.carName = carName;
         this.numOfMove = 0;
     }
-
-    public void moveRacingCar(int inputNumber) {
-        if(4 < inputNumber) numOfMove++;
+    
+    public void moveRacingCar(final int inputNumber) {
+        if (THRESHOLD_FOR_MOVE <= inputNumber) numOfMove++;
     }
 
-    public int getNumOfMove() {
-        return numOfMove;
+    public boolean isCarFinished(final int trial){
+        return numOfMove == trial;
     }
 
     public String getCarName(){
         return carName;
+    }
+
+    public int getNumOfMove() {
+        return numOfMove;
     }
 }

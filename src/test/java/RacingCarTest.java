@@ -24,7 +24,7 @@ public class RacingCarTest {
         RacingCar racingCar = new RacingCar("WINSTON");
         //when
         racingCar.moveRacingCar(1);
-        racingCar.moveRacingCar(4);
+        racingCar.moveRacingCar(3);
         //then
         assertThat(racingCar.getNumOfMove()).isEqualTo(0);
     }

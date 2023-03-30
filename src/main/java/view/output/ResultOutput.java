@@ -1,10 +1,21 @@
 package view.output;
 
+import model.RacingCar;
+import model.RacingCars;
+
 import java.util.List;
 
 public class ResultOutput {
-    public static void outputTurnResult(String name, int advance){
-        System.out.println(name + ":" + ("-".repeat(advance)));
+
+    private final static String TURN_RESULT = "%s : ";
+    public static void outputTurnResult(RacingCars racingCars){
+
+        List<RacingCar> listRacingCars = racingCars.getRacingCars();
+
+        listRacingCars.forEach(
+                racingCar -> System.out.printf(TURN_RESULT+ "-".repeat(racingCar.getNumOfMove()) + System.lineSeparator(), racingCar.getCarName()));
+
+        System.out.println();
     }
 
     public static void outputGameResult(List<String> winners){
