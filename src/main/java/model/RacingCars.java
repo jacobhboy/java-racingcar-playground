@@ -1,14 +1,16 @@
 package model;
 
+import vo.Trial;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RacingCars {
     private final List<RacingCar> racingCars;
-    private final int trial;
+    private final Trial trial;
 
-    public RacingCars(List<String> names, int trial){
+    public RacingCars(List<String> names, Trial trial){
 
         this.racingCars = names.stream()
                 .map(RacingCar::new)
@@ -20,14 +22,14 @@ public class RacingCars {
     public boolean isGameFinished() {
         return racingCars
                 .stream()
-                .anyMatch(racingCar -> racingCar.isCarFinished(trial));
+                .anyMatch(racingCar -> racingCar.isCarFinished(trial.getTrial()));
     }
 
     public List<String> getWinner() {
 
         return racingCars
                  .stream()
-                 .filter(r -> r.isCarFinished(trial))
+                 .filter(r -> r.isCarFinished(trial.getTrial()))
                  .map(RacingCar::getCarName)
                 .collect(Collectors.toCollection(ArrayList::new));
     }

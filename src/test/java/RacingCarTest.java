@@ -14,7 +14,7 @@ public class RacingCarTest {
         racingCar.moveRacingCar(5);
         racingCar.moveRacingCar(9);
         //then
-        assertThat(racingCar.getNumOfMove()).isEqualTo(2);
+        assertThat(racingCar.getMovement()).isEqualTo(2);
     }
 
     @Test
@@ -26,6 +26,6 @@ public class RacingCarTest {
         racingCar.moveRacingCar(1);
         racingCar.moveRacingCar(3);
         //then
-        assertThat(racingCar.getNumOfMove()).isEqualTo(0);
+        assertThat(racingCar.getMovement()).isEqualTo(0);
     }
 }

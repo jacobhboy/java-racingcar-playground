@@ -1,10 +1,10 @@
 import model.RacingCars;
+import vo.Trial;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -15,7 +15,7 @@ public class RacingCarsTest {
 
     @BeforeEach
     void init(){
-        racingCars = new RacingCars(List.of("lee", "chang", "bo"), 4);
+        racingCars = new RacingCars(List.of("lee", "chang", "bo"), new Trial(4));
     }
 
     @Test

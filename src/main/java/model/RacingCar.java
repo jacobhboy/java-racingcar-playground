@@ -1,28 +1,30 @@
 package model;
 
+import vo.Movement;
+
 public class RacingCar {
     public static final int THRESHOLD_FOR_MOVE = 4;
     private final String carName;
-    private int numOfMove;
+    private final Movement movement;
 
     public RacingCar(final String carName) {
         this.carName = carName;
-        this.numOfMove = 0;
+        movement = new Movement();
     }
     
     public void moveRacingCar(final int inputNumber) {
-        if (THRESHOLD_FOR_MOVE <= inputNumber) numOfMove++;
+        if (THRESHOLD_FOR_MOVE <= inputNumber) movement.increaseMovement();
     }
 
     public boolean isCarFinished(final int trial){
-        return numOfMove == trial;
+        return movement.getNumOfMovement() == trial;
     }
 
     public String getCarName(){
         return carName;
     }
 
-    public int getNumOfMove() {
-        return numOfMove;
+    public int getMovement() {
+        return movement.getNumOfMovement();
     }
 }
