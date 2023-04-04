@@ -10,7 +10,7 @@ public class RacingCars {
     private final List<RacingCar> racingCars;
     private final Trial trial;
 
-    public RacingCars(List<String> names, Trial trial){
+    public RacingCars(List<String> names, Trial trial) {
 
         this.racingCars = names.stream()
                 .map(RacingCar::new)
@@ -28,15 +28,15 @@ public class RacingCars {
     public List<String> getWinner() {
 
         return racingCars
-                 .stream()
-                 .filter(r -> r.isCarFinished(trial.getTrial()))
-                 .map(RacingCar::getCarName)
+                .stream()
+                .filter(r -> r.isCarFinished(trial.getTrial()))
+                .map(RacingCar::getCarName)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public void moveRacingCars(List<Integer> numbers) {
 
-        for(int i = 0, size = racingCars.size() ; i < size ; i++){
+        for (int i = 0, size = racingCars.size(); i < size; i++) {
             racingCars
                     .get(i)
                     .moveRacingCar(numbers.get(i));
@@ -47,7 +47,7 @@ public class RacingCars {
         return racingCars;
     }
 
-    public int getLengthOfRacingCar(){
+    public int getLengthOfRacingCar() {
         return racingCars.size();
     }
 }

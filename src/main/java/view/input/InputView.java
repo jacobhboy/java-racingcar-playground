@@ -10,12 +10,12 @@ public class InputView {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static int getTrial(){
+    public static int getTrial() {
 
         return scanner.nextInt();
     }
 
-    public static List<String> getNames(){
+    public static List<String> getNames() {
 
         String name = scanner.nextLine();
 

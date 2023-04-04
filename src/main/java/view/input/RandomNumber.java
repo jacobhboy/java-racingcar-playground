@@ -11,11 +11,14 @@ public class RandomNumber {
 
         List<Integer> numbers = new ArrayList<>();
 
-        for (int i=0; i < lengthOfRacingCar ; i++) {numbers.add(RandomNumber.getRandomNumber());}
+        for (int i = 0; i < lengthOfRacingCar; i++) {
+            numbers.add(RandomNumber.getRandomNumber());
+        }
 
         return numbers;
     }
-    public static int getRandomNumber(){
+
+    public static int getRandomNumber() {
         Random random = new Random();
 
         return Math.abs(random.nextInt() % NUMBER_TO_MAKE_SINGLE_DIGIT);

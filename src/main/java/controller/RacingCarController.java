@@ -1,17 +1,17 @@
 package controller;
 
 import model.RacingCars;
-import vo.Trial;
-import vo.Winner;
 import view.input.InputView;
 import view.input.RandomNumber;
 import view.output.OutputView;
 import view.output.ResultOutput;
+import vo.Trial;
+import vo.Winner;
 
 import java.util.List;
 
 public class RacingCarController {
-    public void play(){
+    public void play() {
 
         RacingCars racingCars = new RacingCars(getNames(), getTrial());
         Winner winner = playGame(racingCars);
